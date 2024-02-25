@@ -1,8 +1,8 @@
 export interface Plan {
-    name: string;
-    price: number;
-    description: string[];
-    age: number;
+  name: string;
+  price: number;
+  description: string[];
+  age: number;
 }
 
-export type SelectedPlan = Pick<Plan, "name" | "price">
+export type SelectedPlan = Pick<Plan, "name" | "price">;

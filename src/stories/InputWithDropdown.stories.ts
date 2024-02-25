@@ -1,22 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Link } from "../components/Link";
+import { InputWithDropdown } from "../components/InputWithDropdown";
 
 const meta = {
-  title: "Basics/Link",
-  component: Link,
+  title: "Basics/InputWithDropdown",
+  component: InputWithDropdown,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Link>;
+} satisfies Meta<typeof InputWithDropdown>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: "Some Link",
-    href: "#",
+    label: "Label",
   },
 };

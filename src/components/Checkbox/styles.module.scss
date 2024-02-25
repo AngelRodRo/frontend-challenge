@@ -11,8 +11,6 @@
   line-height: 20px; /* Match checkbox height */
   position: relative;
 
-  
-
   &:checked::before {
     position: absolute;
     content: "\2713"; /* Unicode check mark character */

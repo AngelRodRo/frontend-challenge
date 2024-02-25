@@ -1,21 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Input } from '../components/Input';
+import { Input } from "../components/Input";
 
 const meta = {
-    title: 'Basics/Input',
-    component: Input,
-    parameters: {
-        layout: 'centered',
-    },
-    tags: ['autodocs'],
-} satisfies  Meta<typeof Input>;
+  title: "Basics/Input",
+  component: Input,
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
+} satisfies Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-    args: {
-        label: 'Input Label'
-    },
+  args: {
+    label: "Input Label",
+  },
 };
