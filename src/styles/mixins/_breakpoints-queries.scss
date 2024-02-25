@@ -1,0 +1,25 @@
+@import "../variables/breakpoints";
+
+@mixin media-query-sm {
+  @media only screen and (min-width: $breakpoint-small) {
+    @content;
+  }
+}
+
+@mixin media-query-md {
+  @media only screen and (min-width: $breakpoint-medium) {
+    @content;
+  }
+}
+
+@mixin media-query-lg {
+  @media only screen and (min-width: $breakpoint-large) {
+    @content;
+  }
+}
+
+@mixin media-query-xl {
+  @media only screen and (min-width: $breakpoint-extra-large) {
+    @content;
+  }
+}
