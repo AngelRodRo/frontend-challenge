@@ -1,0 +1,16 @@
+@import "../../styles/mixins/breakpoints-queries";
+
+.backButton {
+  display: none;
+  align-items: center;
+  gap: 8px;
+
+  color: #4f4fff;
+  cursor: pointer;
+
+  @include media-query-lg {
+    display: flex;
+  }
+}
+
+
