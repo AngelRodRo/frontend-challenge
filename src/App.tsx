@@ -1,4 +1,4 @@
-import { Layout } from './components/Layout';
+import { Suspense } from 'react';
 import { UserInsuranceContextProvider } from './context/UserInsuranceContext';
 import { router } from './router/index';
 
@@ -16,13 +16,13 @@ const queryClient = new QueryClient()
 
 function App() {
   return (
-    <Layout>
       <QueryClientProvider client={queryClient}>
         <UserInsuranceContextProvider>
-            <RouterProvider router={router} />
+            <Suspense fallback={<div></div>}>
+              <RouterProvider router={router} />
+            </Suspense>
         </UserInsuranceContextProvider>
       </QueryClientProvider>
-    </Layout>
   )
 }
 
