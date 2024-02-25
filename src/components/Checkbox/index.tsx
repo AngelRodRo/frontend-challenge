@@ -10,7 +10,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 export const Checkbox: React.FC<Props> = forwardRef<HTMLInputElement, Props>(({ label, name, className, ...props }, ref) => {
     return (
         <div className={className} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <input  type="checkbox" name={name} {...props}  ref={ref} className={cn(styles.Checkbox)}/>
+            <input ref={ref} type="checkbox" className={cn(styles.Checkbox)} {...props} name={name} />
             <label htmlFor={name}>{label}</label>
         </div>
     );
