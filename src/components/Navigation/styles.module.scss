@@ -1,0 +1,17 @@
+@import "../../styles/mixins/breakpoints-queries";
+
+.Navigation {
+  &__breadcrumb {
+    display: none !important;
+  }
+
+  @include media-query-lg {
+    &__breadcrumb {
+      display: flex !important;
+    }
+
+    &__stepper {
+      display: none !important;
+    }
+  }
+}
