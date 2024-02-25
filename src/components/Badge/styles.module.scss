@@ -1,0 +1,15 @@
+@import "../../styles/mixins/breakpoints-queries";
+
+.Badge {
+  width: fit-content;
+  background-color: #01ff83;
+
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+
+  @include media-query-lg {
+    font-size: 14px;
+  }
+}
