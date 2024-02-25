@@ -1,0 +1,106 @@
+@import "../../styles/mixins/aligments";
+@import "../../styles/mixins/breakpoints-queries";
+
+.PlanPage {
+  @include items-center-vertically;
+  margin-bottom: 30px;
+  background-color: #fafbff;
+
+  height: 100%;
+
+  &__content {
+    padding: 0 24px;
+  }
+
+  &__title {
+    font-size: 28px;
+    line-height: 36px;
+    margin: 0;
+    text-align: left;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 28px;
+    margin-top: 8px;
+  }
+
+  &__optionsSection {
+    @include items-center-vertically;
+    display: flex;
+
+    margin-top: 32px;
+  }
+
+  &__plansSection {
+    margin-top: 32px;
+  }
+
+  &__plans {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    justify-content: center;
+
+    margin-top: 40px;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    margin-top: 32px;
+  }
+
+  &__option {
+    max-width: 256px;
+    padding: 40px 24px !important;
+  }
+
+  &__optionTitle {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  &__optionDescription {
+    font-size: 12px;
+  }
+
+  @include media-query-lg {
+    &__content {
+      width: 100%;
+      max-width: 928px;
+    }
+
+    &__backBtn {
+      margin-top: 40px;
+    }
+
+    &__title {
+      text-align: center;
+      font-size: 40px;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+    }
+
+    &__optionsSection {
+      margin-top: 56px;
+    }
+
+    &__options {
+      flex-direction: row;
+      gap: 32px;
+    }
+
+    &__plans {
+      flex-direction: row;
+      gap: 32px;
+
+      margin-top: 20px;
+    }
+  }
+}
