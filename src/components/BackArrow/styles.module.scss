@@ -1,0 +1,57 @@
+.backIcon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: #4f4fff 1px solid;
+  overflow: hidden;
+  transition: background 0.3s ease;
+
+  &.back {
+    .arrowWrap {
+      left: -50%;
+    }
+  }
+
+  &:hover {
+    background: #4f4fff;
+    .arrowWrap {
+      .arrowPart {
+        background: #fff;
+      }
+    }
+  }
+}
+
+.arrowWrap {
+  display: block;
+  position: absolute;
+  height: 70%;
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -50%);
+  transition: left 0.3s ease;
+
+  .arrowPart {
+    height: 1px;
+    left: 0;
+    top: 50%;
+    background: #4f4fff;
+    position: absolute;
+    display: block;
+    transition: background 0.3s ease;
+  }
+
+  .arrowPart1 {
+    width: 60%;
+    transform: rotate(-45deg);
+    transform-origin: 0 0;
+  }
+
+  .arrowPart2 {
+    width: 60%;
+    transform: rotate(45deg);
+    transform-origin: 0 0;
+  }
+}
