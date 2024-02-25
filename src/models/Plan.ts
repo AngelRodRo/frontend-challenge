@@ -1,6 +1,6 @@
 export interface Plan {
     name: string;
-    price: string;
+    price: number;
     description: string[];
     age: number;
 }
