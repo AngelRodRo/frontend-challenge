@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../assets/icons/logo.svg';
 import { Icon, IconName } from '../Icon';
 import styles from './styles.module.scss';
@@ -8,7 +9,9 @@ interface Props {
 
 export const Header: React.FC<Props> = () => {
     return (<header className={styles.Header}>
-        <img src={logo} alt='Rimac Logo' />
+        <Link to='/'>
+            <img src={logo} alt='Rimac Logo' />
+        </Link>
         <div className={styles.Header__contact}>
             <p className={styles.Header__text}>¡Compra por este medio!</p>
             <div>
