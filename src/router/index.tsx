@@ -1,4 +1,5 @@
 
+import { Layout } from '../components/Layout';
 import HomePage from '../pages/Home';
 import PlansPage from '../pages/Plans';
 import SummaryPage from '../pages/Summary';
@@ -15,15 +16,15 @@ import {
 const routesObject: RouteObject[] = [
     {
       path: routes.Home,
-      element: <HomePage/>,
+      element: <Layout><HomePage/></Layout> ,
     },
     {
       path: routes.Plans,
-      element: <PlansPage />
+      element: <Layout><PlansPage /></Layout>
     },
     {
       path: routes.Summary,
-      element: <SummaryPage />
+      element: <Layout><SummaryPage /></Layout>
     }
   ]
 
