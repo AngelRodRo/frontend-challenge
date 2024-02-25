@@ -1,0 +1,49 @@
+.PlanCard {
+  width: 100%;
+  max-width: 288px;
+
+  align-items: center;
+
+  padding: 40px 24px;
+
+  &__title {
+    font-size: 24px;
+  }
+
+  &__recommended {
+    position: absolute;
+    top: 0;
+    margin-bottom: 8px;
+
+    font-size: 12px;
+  }
+
+  &__descriptionItem {
+    font-size: 16px;
+    margin-top: 24px;
+    line-height: 28px;
+  }
+
+  &__info {
+    display: flex;
+
+    justify-content: space-between;
+    margin-top: 28px;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__priceLabel {
+    text-transform: uppercase;
+    color: #7981b2;
+  }
+
+  &__price {
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
