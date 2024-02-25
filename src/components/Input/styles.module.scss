@@ -1,0 +1,28 @@
+@import "../../styles/variables/colors";
+
+.Input {
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px;
+
+  &--bordered {
+    border: 1px solid $SECONDARY_COLOR;
+  }
+
+  &--rounded {
+    border-radius: 8px;
+  }
+
+  &__label {
+    color: #5e6488;
+  }
+
+  &__content {
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
