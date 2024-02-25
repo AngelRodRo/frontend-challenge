@@ -1,0 +1,71 @@
+@import "../../styles/mixins/breakpoints-queries";
+@import "../../styles/mixins/aligments";
+
+.Home {
+  padding: 0 24px;
+
+  &__heroSection {
+    display: flex;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    margin-right: 20px;
+  }
+
+  &__title {
+    font-size: 28px;
+    margin: 0;
+    line-height: 36px;
+  }
+
+  &__heroImage {
+  }
+
+  &__divider {
+    margin: 24px 0;
+    border-color: #ccd1ee;
+  }
+
+  &__form {
+    margin-bottom: 40px;
+  }
+
+  &__formDescription {
+    display: none;
+  }
+
+  @include media-query-lg {
+    margin: 32px 0 110px 0;
+    @include items-center-horizontally;
+    &__formSection {
+      max-width: 356px;
+    }
+
+    &__title {
+      font-size: 32px;
+
+      margin-top: 16px;
+    }
+
+    &__heroImage {
+      margin-right: 120px;
+    }
+
+    &__info {
+      display: none;
+    }
+
+    &__divider {
+      display: none;
+    }
+
+    &__formDescription {
+      display: block;
+    }
+  }
+}
