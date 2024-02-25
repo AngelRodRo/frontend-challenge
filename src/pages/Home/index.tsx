@@ -24,26 +24,28 @@ const HomePage: React.FC<Props> = () => {
 
     return (
         <section className={styles.Home}>
-            <div className={styles.Home__heroSection}>
-                <div className={styles.Home__info}>
-                    {renderedHomeInfo}
+            <div className={styles.Home__content}>
+                <div className={styles.Home__heroSection}>
+                    <div className={styles.Home__info}>
+                        {renderedHomeInfo}
+                    </div>
+                        <img
+                            className={styles.Home__heroImage}
+                            srcSet={`${familyImgSmall} 136w, ${familyImgLarge} 480w`}
+                            src={familyImgLarge}
+                            sizes="
+                            (max-width: 400px) 136px,
+                            480px"
+                            alt="Family"
+                        />
                 </div>
-                    <img
-                        className={styles.Home__heroImage}
-                        srcSet={`${familyImgSmall} 136w, ${familyImgLarge} 480w`}
-                        src={familyImgLarge}
-                        sizes="
-                        (max-width: 400px) 136px,
-                        480px"
-                        alt="Family"
-                    />
-            </div>
-            <hr className={styles.Home__divider} />
-            <div className={styles.Home__formSection}>
-                <div className={styles.Home__formDescription}>
-                    {renderedHomeInfo}
+                <hr className={styles.Home__divider} />
+                <div className={styles.Home__formSection}>
+                    <div className={styles.Home__formDescription}>
+                        {renderedHomeInfo}
+                    </div>
+                    <Form className={styles.Home__form} />
                 </div>
-                <Form className={styles.Home__form} />
             </div>
         </section>
     );
