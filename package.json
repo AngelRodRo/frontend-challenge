@@ -12,8 +12,16 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.22.2",
+    "axios": "^1.6.7",
+    "classname": "^0.0.0",
+    "classnames": "^2.5.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-checkmark": "^2.0.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.50.1",
+    "react-router-dom": "^6.22.1",
+    "vite-plugin-svgr": "^4.2.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.17",
@@ -36,6 +44,7 @@
     "saas": "^1.0.0",
     "sass": "^1.71.1",
     "storybook": "^7.6.17",
+    "storybook-addon-sass-postcss": "^0.2.0",
     "typescript": "^5.2.2",
     "vite": "^5.1.4"
   }
