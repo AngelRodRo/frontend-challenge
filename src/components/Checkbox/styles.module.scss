@@ -1,0 +1,29 @@
+.Checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px; /* Adjust the size as needed */
+  height: 20px; /* Adjust the size as needed */
+  border: 2px solid black; /* Black border */
+  border-radius: 3px; /* Rounded corners */
+  outline: none;
+  cursor: pointer;
+  line-height: 20px; /* Match checkbox height */
+  position: relative;
+
+  
+
+  &:checked::before {
+    position: absolute;
+    content: "\2713"; /* Unicode check mark character */
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 20px; /* Match checkbox height */
+    font-size: 16px; /* Adjust size as needed */
+    color: white; /* White color for check mark */
+    background-color: black; /* Black background for check mark */
+    border-radius: 3px; /* Match border radius of checkbox */
+  }
+}
