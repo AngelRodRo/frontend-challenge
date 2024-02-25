@@ -1,10 +1,12 @@
+import cn from 'classnames';
 import React from 'react';
 import styles from './styles.module.scss';
 
 interface Props {
-    text: string;
+    className?: string;
+    text: string | React.ReactNode;
 }
 
-export const Badge: React.FC<Props> = ({ text }) =>{
-    return (<div className={styles.Badge}>{text}</div>);
+export const Badge: React.FC<Props> = ({ text, className }) =>{
+    return (<div className={cn(styles.Badge, className)}>{text}</div>);
 }
