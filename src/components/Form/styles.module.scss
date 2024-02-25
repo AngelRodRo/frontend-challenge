@@ -1,0 +1,45 @@
+@import "../../styles/mixins/breakpoints-queries";
+
+.Form {
+  &__text {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &__input {
+    margin-top: 16px;
+  }
+
+  &__submitButton {
+    margin-top: 16px;
+  }
+
+  &__terms {
+    margin: 24px 0;
+  }
+
+  &__checkbox {
+    font-size: 14px;
+  }
+
+  &__link {
+    margin-top: 16px;
+  }
+
+  @include media-query-lg {
+    &__checkbox {
+      margin: 0;
+      padding: 0;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    &__link {
+      margin-top: 12px;
+    }
+
+    &__submitButton {
+      margin-top: 24px;
+    }
+  }
+}
