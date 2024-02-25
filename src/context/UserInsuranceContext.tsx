@@ -3,10 +3,10 @@ import { SelectedPlan } from "../models/Plan";
 import { User } from "../models/User";
 
 export interface UserInsuranceContextValues {
-    user?: User,
+    user?: Partial<User>,
     selectedPlan?: SelectedPlan,
 
-    updateUser: (user: User) => void,
+    updateUser: (user: Partial<User>) => void,
     updateSelectedPlan: (user: SelectedPlan) => void
 }
 
@@ -30,12 +30,18 @@ const initialValues: UserInsuranceContextValues = {
 
 export const UserInsuranceContextProvider: React.FC<UserInsuranceContextProviderProps> = ({ children }) => {
 
-    const [user, setUser] = useState<User>();
+    const [user, setUser] = useState<Partial<User>>({
+        name: '',
+        lastName: '',
+        birthDay: '',
+        dni: '',
+        phone: '',
+    });
     const [selectedPlan, setPlan] = useState<SelectedPlan>();
 
-    const updateUser = useCallback((userInfo: User) => {
-        setUser(userInfo);
-    }, []);
+    const updateUser = useCallback((userInfo: Partial<User>) => {
+        setUser({ ...user, ...userInfo });
+    }, [user]);
 
     const updateSelectedPlan = useCallback((plan: SelectedPlan) => {
         setPlan(plan);
