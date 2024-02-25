@@ -1,0 +1,13 @@
+@import "../../styles/variables/colors";
+
+.Link {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 12px;
+
+  &:link,
+  &:visited {
+    font-weight: bold;
+    color: $SECONDARY_COLOR;
+  }
+}
