@@ -55,6 +55,7 @@ export const PlanCard: React.FC<Props> = ({
       </div>
       <div style={{ marginTop: "40px" }}>
         <Button
+          className={styles.PlanCard__button}
           variant={ButtonVariants.primary}
           onClick={() => onSelected({ name, price })}
         >
