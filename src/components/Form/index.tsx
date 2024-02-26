@@ -2,7 +2,7 @@ import cn from "classnames";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { ObjectSchema, boolean, object, string } from "yup";
+import { ObjectSchema, bool, object, string } from "yup";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, ButtonVariants } from "../Button";
@@ -26,6 +26,14 @@ interface IFormInput extends Pick<User, "phone" | "dni"> {
   comercialPolicy: boolean;
 }
 
+const ErrorMessage:React.FC<{ children: React.ReactNode }> = ({ children }) =>{
+  return (
+    <div style={{ color: 'red'}}>
+      {children}
+    </div>
+  );
+}
+
 const validationSchema: ObjectSchema<IFormInput> = object({
   phone: string()
     .matches(/^\d{9}$/, {
@@ -37,8 +45,8 @@ const validationSchema: ObjectSchema<IFormInput> = object({
       message: "El DNI debe tener exactamente 8 dígitos numéricos",
     })
     .required(),
-  privacyPolicy: boolean().required("Required"),
-  comercialPolicy: boolean().required("Required"),
+  privacyPolicy: bool().oneOf([true], "").required("Required"),
+  comercialPolicy: bool().oneOf([true], "").required("Required"),
 });
 
 export const Form: React.FC<Props> = ({ className, ...props }) => {
@@ -51,12 +59,13 @@ export const Form: React.FC<Props> = ({ className, ...props }) => {
       dni: "",
       phone: "",
       privacyPolicy: false,
-      comercialPolicy: false,
+      comercialPolicy: false
     },
     resolver: yupResolver(validationSchema),
   });
 
-  const { errors } = form.formState;
+  const { errors, } = form.formState;
+  console.log(form.watch());
 
   const onHandleSubmit = (data: IFormInput) => {
     updateUser({ dni: data.dni, phone: data.phone });
@@ -75,14 +84,15 @@ export const Form: React.FC<Props> = ({ className, ...props }) => {
       </p>
       <div className={styles.Form__input}>
         <InputWithDropdown
+          options={['DNI']}
           label="Nro. de Documento"
           {...form.register("dni")}
         />
-        {errors.dni && <span>{errors.dni.message}</span>}
+        {errors.dni && <ErrorMessage>{errors.dni.message}</ErrorMessage>}
       </div>
       <div className={styles.Form__input}>
         <Input label="Celular" {...form.register("phone")} />
-        {errors.phone && <span>{errors.phone.message}</span>}
+        {errors.phone && <ErrorMessage>{errors.phone.message}</ErrorMessage>}
       </div>
       <div className={styles.Form__terms}>
         <Checkbox
@@ -96,7 +106,7 @@ export const Form: React.FC<Props> = ({ className, ...props }) => {
           {...form.register("comercialPolicy")}
         />
         {errors.comercialPolicy || errors.privacyPolicy ? (
-          <span>Acepte los terminos y condiciones</span>
+          <ErrorMessage>Acepte los terminos y condiciones antes de continuar</ErrorMessage>
         ) : null}
         <div className={styles.Form__link}>
           <Link href="#">Aplican Términos y Condiciones.</Link>
@@ -104,7 +114,6 @@ export const Form: React.FC<Props> = ({ className, ...props }) => {
       </div>
       <Button
         className={styles.Form__submitButton}
-        fullWidth
         type="submit"
         variant={ButtonVariants.secondary}
       >
