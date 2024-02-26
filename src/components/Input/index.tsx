@@ -3,7 +3,7 @@ import { ForwardedRef, forwardRef } from "react";
 import styles from "./styles.module.scss";
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
-  ref: ForwardedRef<HTMLInputElement>;
+  ref?: ForwardedRef<HTMLInputElement>;
   label: string;
   rounded?: boolean;
   bordered?: boolean;
