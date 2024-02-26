@@ -85,12 +85,13 @@ export const Form: React.FC<Props> = ({ className, ...props }) => {
         <InputWithDropdown
           options={['DNI']}
           label="Nro. de Documento"
+          type="number"
           {...form.register("dni")}
         />
         {errors.dni && <ErrorMessage>{errors.dni.message}</ErrorMessage>}
       </div>
       <div className={styles.Form__input}>
-        <Input label="Celular" {...form.register("phone")} />
+        <Input type="number" label="Celular" {...form.register("phone")} />
         {errors.phone && <ErrorMessage>{errors.phone.message}</ErrorMessage>}
       </div>
       <div className={styles.Form__terms}>
