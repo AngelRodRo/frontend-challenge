@@ -12,7 +12,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <UserInsuranceContextProvider>
-        <Suspense fallback={<div></div>}>
+        <Suspense fallback={<div>Loading...</div>}>
           <RouterProvider router={router} />
         </Suspense>
       </UserInsuranceContextProvider>
