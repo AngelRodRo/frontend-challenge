@@ -1,11 +1,11 @@
 @font-face {
   font-family: "BRSonoma";
-  src: url("./src/assets/fonts/BRSonoma-Regular.otf") format("opentype");
+  src: url("./assets/fonts/BRSonoma-Regular.otf") format("opentype");
 }
 
 @font-face {
   font-family: "BRSonoma";
-  src: url("./src/assets/fonts/BRSonoma-Bold.otf") format("opentype");
+  src: url("./assets/fonts/BRSonoma-Bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
