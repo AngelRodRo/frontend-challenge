@@ -1,7 +1,9 @@
+import { lazy } from "react";
 import { Layout } from "../components/Layout";
-import HomePage from "../pages/Home";
-import PlansPage from "../pages/Plans";
-import SummaryPage from "../pages/Summary";
+
+const HomePage = lazy(() => import("../pages/Home"));
+const PlansPage = lazy(() => import("../pages/Plans"));
+const SummaryPage = lazy(() => import("../pages/Summary"));
 
 import { routes } from "./routes";
 
