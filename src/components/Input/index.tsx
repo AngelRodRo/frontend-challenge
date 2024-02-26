@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   ref?: ForwardedRef<HTMLInputElement>;
-  label: string;
+  label?: string;
   rounded?: boolean;
   bordered?: boolean;
 }
