@@ -1,5 +1,5 @@
 @import "../../styles/mixins/breakpoints-queries";
-@import "../../styles/mixins/aligments";
+@import "../../styles/mixins/alignments";
 
 .Summary {
   @include items-center-vertically;
@@ -54,7 +54,7 @@
       width: 100%;
       max-width: 928px;
 
-      margin-top: 64px;
+      margin: 64px 0;
     }
 
     &__user {
