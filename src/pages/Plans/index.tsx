@@ -1,19 +1,24 @@
 import { useQuery } from "@tanstack/react-query";
 import { useCallback, useContext, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import styles from "./styles.module.scss";
 
-import { useNavigate } from "react-router-dom";
-import { getPlans } from "../../api/plans";
-import { getUserInfo } from "../../api/user";
 import { BackButton } from "../../components/BackButton";
 import { Card } from "../../components/Card";
 import { Icon, IconName } from "../../components/Icon";
 import { Navigation } from "../../components/Navigation";
 import { PlanCard } from "../../components/PlanCard";
+
+import { routes } from "../../router/routes";
+
+import { getPlans } from "../../api/plans";
+import { getUserInfo } from "../../api/user";
+
 import { UserInsuranceContext } from "../../context/UserInsuranceContext";
 import { SelectedPlan } from "../../models/Plan";
-import { routes } from "../../router/routes";
+import { calculateAge } from "../../utils/age";
+
 interface Props {}
 
 const useGetAPIDataInfo = () => {
@@ -33,22 +38,7 @@ const useGetAPIDataInfo = () => {
   return { user, plans };
 };
 
-function calculateAge(dateString: string): number {
-  const today: Date = new Date();
-  const birthDate: Date = new Date(dateString);
 
-  let age: number = today.getFullYear() - birthDate.getFullYear();
-  const monthDiff: number = today.getMonth() - birthDate.getMonth();
-
-  if (
-    monthDiff < 0 ||
-    (monthDiff === 0 && today.getDate() < birthDate.getDate())
-  ) {
-    age--;
-  }
-
-  return age;
-}
 
 const planNameIconMap: { [key: string]: IconName } = {
   "Plan en Casa": IconName.housePlan,
