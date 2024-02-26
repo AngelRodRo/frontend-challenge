@@ -65,7 +65,6 @@ export const Form: React.FC<Props> = ({ className, ...props }) => {
   });
 
   const { errors, } = form.formState;
-  console.log(form.watch());
 
   const onHandleSubmit = (data: IFormInput) => {
     updateUser({ dni: data.dni, phone: data.phone });
