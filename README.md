@@ -6,7 +6,7 @@
 
 ## Live Demo
 
-Demo:
+Demo: https://frontend-challenge-9505.netlify.app/
 
 ## Contents
 
