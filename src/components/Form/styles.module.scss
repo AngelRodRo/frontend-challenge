@@ -26,6 +26,11 @@
     margin-top: 16px;
   }
 
+  &__submitButton {
+    width: 100%;
+    margin-top: 24px;
+  }
+
   @include media-query-lg {
     &__checkbox {
       margin: 0;
@@ -39,6 +44,7 @@
     }
 
     &__submitButton {
+      width: auto;
       margin-top: 24px;
     }
   }
